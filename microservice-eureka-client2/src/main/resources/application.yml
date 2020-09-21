@@ -1,0 +1,9 @@
+server:
+  port: 9102
+spring:
+  application:
+    name: eureka-client2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9100/eureka
