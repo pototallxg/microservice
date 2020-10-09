@@ -8,8 +8,19 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>microservice-gateway-zuul</artifactId>
-
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+        <!-- zuul网关的重试机制，不是使用ribbon内置的重试机制
+           是借助spring-retry组件实现的重试
+           开启zuul网关重试机制需要增加下述依赖
+         -->
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+    </dependencies>
 </project>
