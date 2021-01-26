@@ -1,0 +1,9 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: EurekaZuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9100/eureka
