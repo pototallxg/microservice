@@ -2,8 +2,19 @@ server:
   port: 9200
 spring:
   application:
-    name: EurekaZuul
+    name: eureka-zuul
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:9100/eureka
+zuul:
+  routes:
+    eureka-client1:
+      path: /client1/**
+      serviceId:  eureka-client1
+    eureka-client2:
+      path: /client2/**
+      serviceId: eureka-client2
+    eureka-client3:
+      path: /client3/**
+      serviceId: eureka-client3
