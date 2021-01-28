@@ -1,3 +1,5 @@
+#http://localhost:9200/actuator/routes
+#http://localhost:9200/actuator/routes/details
 server:
   port: 9200
 spring:
@@ -7,15 +9,16 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:9100/eureka
+    registerWithEureka: false
+    fetchRegistry: true
 zuul:
   routes:
-    eureka-client1:
-      path: /client1/**
-      serviceId: eureka-client1
-    eureka-client2:
-      path: /client2/**
-      serviceId: eureka-client2
-    eureka-client3:
-      path: /client3/**
-      serviceId: eureka-client3
+    eureka-zuul:
+      serviceId: eureka-zuul
   prefix: /api
+management:
+  endpoints:
+    web:
+      exposure:
+        #添加需要暴露出去的路径，"*"表示所有路径
+        include: "*"
