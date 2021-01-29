@@ -6,7 +6,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:9100/eureka
+      defaultZone: http://127.0.0.1:9200/eureka
 #feign的配置，连接超时及读取超时配置
 feign:
   client:
