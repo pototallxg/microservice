@@ -1,14 +1,14 @@
 #http://localhost:9200/actuator/routes
 #http://localhost:9200/actuator/routes/details
 server:
-  port: 9200
+  port: 9100
 spring:
   application:
     name: eureka-zuul
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:9100/eureka
+      defaultZone: http://127.0.0.1:9200/eureka
     registerWithEureka: false
     fetchRegistry: true
 zuul:
